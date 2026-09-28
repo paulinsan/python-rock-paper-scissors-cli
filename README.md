@@ -1,24 +1,24 @@
 # 🎮 Pedra, Papel ou Tesoura
 
-Um jogo de **Pedra, Papel ou Tesoura** desenvolvido em Python para praticar conceitos fundamentais de programação, como funções, estruturas condicionais, loops, tratamento de erros e dicionários.
+Jogo de **Pedra, Papel ou Tesoura** desenvolvido em Python para praticar conceitos fundamentais de programação, organização de código e criação de uma aplicação interativa executada no terminal.
 
-> 🚧 **Status:** Em desenvolvimento
+> ✅ **Status: Concluído**
 
 ---
 
 ## 📌 Sobre o projeto
 
-Este projeto foi desenvolvido como parte dos meus estudos em **Python**, com o objetivo de colocar em prática conceitos de programação através de um jogo simples e interativo executado no terminal.
+Este projeto foi desenvolvido como parte dos meus estudos em **Python**, com o objetivo de transformar conceitos aprendidos durante os estudos em uma aplicação prática.
 
-O jogador escolhe entre **Pedra, Papel ou Tesoura**, enquanto o computador realiza uma escolha aleatória.
+O jogador escolhe entre **Pedra, Papel ou Tesoura**, enquanto o computador realiza uma escolha aleatória. A cada rodada, o programa verifica o resultado, atualiza o placar e permite que o jogador continue jogando ou encerre a partida.
 
-A cada rodada, o programa verifica o resultado, atualiza o placar e permite que o jogador continue ou encerre a partida.
+Ao finalizar, o jogo apresenta o **placar final** e informa se o jogador venceu, perdeu ou terminou empatado.
 
 ---
 
-## 🎮 Como funciona
+## 🎮 Como jogar
 
-O jogador escolhe uma das três opções:
+Ao iniciar o jogo, são apresentadas três opções:
 
 ```text
 [1] Pedra ⛰️
@@ -26,14 +26,16 @@ O jogador escolhe uma das três opções:
 [3] Tesoura ✂️
 ```
 
-O computador escolhe uma opção aleatoriamente.
+O jogador deve informar o número correspondente à sua escolha.
 
-As regras são:
+O computador realiza sua escolha automaticamente.
 
-* ⛰️ Pedra vence ✂️ Tesoura
-* 📄 Papel vence ⛰️ Pedra
-* ✂️ Tesoura vence 📄 Papel
-* Escolhas iguais resultam em empate
+### Regras
+
+* ⛰️ **Pedra** vence **Tesoura**
+* 📄 **Papel** vence **Pedra**
+* ✂️ **Tesoura** vence **Papel**
+* Escolhas iguais resultam em **empate**
 
 ---
 
@@ -42,70 +44,54 @@ As regras são:
 * 🎮 Escolha entre Pedra, Papel ou Tesoura
 * 🤖 Escolha aleatória do computador
 * 🔄 Sistema de múltiplas rodadas
-* 🏆 Contador de pontos
+* 🏆 Sistema de pontuação
 * 👀 Contador de empates
 * 🔢 Contador de rodadas
-* 📊 Exibição do placar durante a partida
-* 🏁 Exibição do resultado final
-* 🔁 Opção para jogar novamente
+* 📊 Exibição do placar atual
+* 🏁 Exibição do placar final
+* 🏆 Identificação do resultado final da partida
+* 🔁 Opção de jogar novamente
 * ❌ Validação de entradas inválidas
 * 🛡️ Tratamento de erros com `try/except`
-* 🧩 Organização do código utilizando funções
-* 📚 Utilização de dicionário para armazenar o placar
+* 🧩 Código organizado em funções
+* 📚 Utilização de dicionário para gerenciamento do placar
 
 ---
 
-## 🧠 Conceitos de Python utilizados
+## 🧠 Conceitos de Python praticados
 
-Durante o desenvolvimento foram utilizados diversos conceitos importantes da linguagem:
+Durante o desenvolvimento do projeto foram utilizados diferentes conceitos da linguagem Python.
 
-### Variáveis
+### 📋 Listas
 
-Utilizadas para armazenar informações do jogo.
-
-```python
-computador = random.choice(opcoes)
-```
-
-### Listas
-
-Utilizadas para armazenar as opções disponíveis:
+As opções disponíveis no jogo são armazenadas em uma lista:
 
 ```python
 opcoes = ["Pedra ⛰️", "Papel 📄", "Tesoura ✂️"]
 ```
 
-### Estruturas condicionais
+### 🎲 Biblioteca `random`
 
-Utilizadas para verificar as escolhas e determinar o resultado:
-
-```python
-if resultado == "empate":
-    ...
-elif resultado == "jogador":
-    ...
-else:
-    ...
-```
-
-### Laço `while`
-
-Utilizado para manter o jogo funcionando enquanto o jogador desejar continuar:
+O computador utiliza `random.choice()` para escolher uma opção aleatoriamente:
 
 ```python
-while True:
-    ...
+computador = random.choice(opcoes)
 ```
 
-### Funções
+### 🔀 Estruturas condicionais
 
-O código foi dividido em funções para facilitar a organização e reutilização:
+As estruturas `if`, `elif` e `else` são utilizadas para verificar os resultados das partidas e validar as escolhas do jogador.
+
+### 🔁 Estruturas de repetição
+
+O `while` mantém o jogo funcionando enquanto o jogador desejar continuar.
+
+### 🧩 Funções
+
+O projeto foi dividido em funções para organizar melhor as responsabilidades do programa:
 
 ```python
 def escolher_opcao():
-    ...
-
-def jogar_novamente():
     ...
 
 def verificar_vencedor(jogador, computador):
@@ -114,13 +100,16 @@ def verificar_vencedor(jogador, computador):
 def mostrar_placar(placar):
     ...
 
+def jogar_novamente():
+    ...
+
 def mostrar_resultado_final(placar):
     ...
 ```
 
-### Dicionários
+### 📚 Dicionários
 
-O placar é armazenado em um dicionário:
+O sistema de pontuação utiliza um dicionário para armazenar as informações da partida:
 
 ```python
 placar = {
@@ -131,9 +120,11 @@ placar = {
 }
 ```
 
-### Tratamento de erros
+Dessa forma, todas as informações relacionadas ao placar ficam organizadas em uma única estrutura.
 
-O `try/except` impede que o programa seja encerrado quando o jogador digita algo que não seja um número:
+### 🛡️ Tratamento de exceções
+
+O `try/except` é utilizado para impedir que o programa seja encerrado quando o jogador informa algo que não pode ser convertido para inteiro:
 
 ```python
 try:
@@ -147,7 +138,7 @@ except ValueError:
 
 ## 📊 Sistema de pontuação
 
-O jogo mantém quatro informações principais:
+O dicionário `placar` controla quatro informações:
 
 | Informação   | Descrição                           |
 | ------------ | ----------------------------------- |
@@ -156,37 +147,52 @@ O jogo mantém quatro informações principais:
 | `empates`    | Quantidade de rodadas empatadas     |
 | `rodadas`    | Quantidade total de rodadas         |
 
-Exemplo:
+Exemplo de placar:
 
 ```text
-===== PLACAR =====
+===== PLACAR ATUAL =====
+
+Rodadas:    7
 Você:       4
 Computador: 2
 Empates:    1
-Rodadas:    7
 ```
-
-Ao final da partida, o programa compara a pontuação do jogador com a do computador e informa se o jogador:
-
-* 🏆 Venceu
-* 😓 Perdeu
-* 👀 Empatou
 
 ---
 
-## 🗂️ Estrutura das funções
+## 🏁 Resultado final
+
+Quando o jogador decide encerrar a partida, o programa compara as pontuações finais.
+
+Se o jogador tiver mais pontos:
+
+```text
+🏆 Você venceu a partida! 🏆
+```
+
+Se o computador tiver mais pontos:
+
+```text
+😓 Você perdeu a partida! 😓
+```
+
+Se ambos tiverem a mesma pontuação:
+
+```text
+👀 A partida terminou empatada! 👀
+```
+
+---
+
+## 🗂️ Organização das funções
 
 ### `escolher_opcao()`
 
 Responsável por receber e validar a escolha do jogador.
 
-### `jogar_novamente()`
+### `verificar_vencedor(jogador, computador)`
 
-Pergunta se o jogador deseja iniciar outra rodada e aceita apenas `S` ou `N`.
-
-### `verificar_vencedor()`
-
-Compara a escolha do jogador com a escolha do computador e retorna:
+Compara as escolhas e retorna o resultado da rodada:
 
 ```text
 "jogador"
@@ -194,11 +200,15 @@ Compara a escolha do jogador com a escolha do computador e retorna:
 "empate"
 ```
 
-### `mostrar_placar()`
+### `mostrar_placar(placar)`
 
-Exibe os dados armazenados no dicionário `placar`.
+Exibe as informações armazenadas no dicionário de pontuação.
 
-### `mostrar_resultado_final()`
+### `jogar_novamente()`
+
+Pergunta se o jogador deseja continuar jogando e valida as respostas `S` e `N`.
+
+### `mostrar_resultado_final(placar)`
 
 Compara a pontuação final e informa o resultado da partida.
 
@@ -212,7 +222,7 @@ Compara a pontuação final e informa o resultado da partida.
 git clone URL_DO_SEU_REPOSITORIO
 ```
 
-### 2. Acesse a pasta do projeto
+### 2. Entre na pasta do projeto
 
 ```bash
 cd nome-do-projeto
@@ -228,46 +238,47 @@ python nome_do_arquivo.py
 
 ## 🛠️ Tecnologias utilizadas
 
-* 🐍 Python
-* 🎲 Biblioteca `random`
-* 💻 Terminal
+* 🐍 **Python**
+* 🎲 **Random**
+* 💻 **Terminal**
 
 ---
 
-## 🚧 Próximos passos
+## 📈 Evolução do projeto
 
-Este projeto ainda está em desenvolvimento. Algumas melhorias que podem ser implementadas futuramente:
-
-* [ ] Melhorar a interface do terminal
-* [ ] Criar um menu inicial
-* [ ] Adicionar histórico das partidas
-* [ ] Criar níveis de dificuldade
-* [ ] Separar o projeto em diferentes arquivos Python
-* [ ] Criar uma versão com interface gráfica utilizando Tkinter
-
----
-
-## 📚 Objetivo de aprendizado
-
-O principal objetivo deste projeto é praticar programação em Python através de uma aplicação simples, evoluindo o código gradualmente e aplicando novos conceitos conforme o aprendizado.
-
-O projeto começou com uma estrutura simples de Pedra, Papel ou Tesoura e foi sendo aprimorado com:
+O projeto foi desenvolvido de forma gradual, adicionando novos conceitos conforme o aprendizado:
 
 ```text
 Jogo básico
-    ↓
+     ↓
 Múltiplas rodadas
-    ↓
+     ↓
 Sistema de pontuação
-    ↓
-Funções
-    ↓
-Dicionário
-    ↓
-Placar completo
-    ↓
-Resultado final
+     ↓
+Validação de entradas
+     ↓
+Tratamento de erros
+     ↓
+Organização em funções
+     ↓
+Dicionário para o placar
+     ↓
+Contador de rodadas e empates
+     ↓
+Placar atual e final
+     ↓
+Resultado final da partida
+     ↓
+Projeto concluído ✅
 ```
+
+---
+
+## 🎯 Objetivo de aprendizado
+
+O principal objetivo deste projeto foi praticar **Python através de uma aplicação simples**, desenvolvendo o código gradualmente e aplicando conceitos de programação de maneira prática.
+
+Além de funcionar como um jogo, o projeto serviu para praticar a organização e evolução de um código, passando de uma estrutura inicial simples para uma aplicação mais organizada utilizando **funções, estruturas condicionais, loops, tratamento de exceções e dicionários**.
 
 ---
 
